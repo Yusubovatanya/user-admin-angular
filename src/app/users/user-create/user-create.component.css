@@ -1,0 +1,23 @@
+.upload_img {
+  visibility: hidden;
+  position: absolute;
+}
+
+.data_field {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.other_info textarea {
+  width: 300px;
+}
+
+.card_container {
+  padding: 26px 100px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.img_avatar {
+  margin-bottom: 1em;
+}

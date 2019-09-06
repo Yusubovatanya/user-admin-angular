@@ -1,0 +1,36 @@
+<div class="main-container">
+  <app-alerts></app-alerts>
+  <header class="header-5">
+    <div class="branding">
+      <a routerLink="/" class="nav-link">
+        <clr-icon shape="home" class="is-inverse"></clr-icon>
+        <span class="title">OUR TEAM</span>
+      </a>
+    </div>
+    <div class="header-nav" *ngIf="isLoggedIn()">
+      <a routerLink="/users" routerLinkActive="active" class="nav-link">
+        <span class="nav-text">TEAM</span>
+      </a>
+      <a routerLink="/about" routerLinkActive="active" class="nav-link">
+        <span class="nav-text">ABOUT US</span>
+      </a>
+    </div>
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-icon" clrDropdownTrigger>
+          <clr-icon shape="user"></clr-icon>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a *ngIf="!isLoggedIn()" clrDropdownItem>Войти</a>
+          <a *ngIf="isLoggedIn()" (click)="logOut()" clrDropdownItem>Выйти</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </header>
+  <div class="content-container wrapper">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

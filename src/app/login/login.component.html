@@ -1,0 +1,31 @@
+<div class="login-wrapper">
+  <form class="login" (ngSubmit)="login()">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      Our Company
+      <h5 class="hint">Use your Company ID to sign in or create one now</h5>
+    </section>
+    <div class="login-group">
+      <clr-select-container>
+        <label class="clr-sr-only">User Role</label>
+        <select clrSelect name="type" [(ngModel)]="loginForm.type">
+          <option value="local">Local Users</option>
+          <option value="admin">Administrator</option>
+        </select>
+      </clr-select-container>
+      <clr-input-container>
+        <label class="clr-sr-only">Username</label>
+        <input type="text" name="username" clrInput placeholder="Username" [(ngModel)]="loginForm.username" />
+      </clr-input-container>
+      <clr-password-container>
+        <label class="clr-sr-only">Password</label>
+        <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="loginForm.password" />
+      </clr-password-container>
+      <div class="error active" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+      <button class="btn btn-primary" type="submit">Sing in</button>
+      <button class="btn btn-info btn_registration" (click)="goToRegistration()">Registration</button>
+    </div>
+  </form>
+</div>

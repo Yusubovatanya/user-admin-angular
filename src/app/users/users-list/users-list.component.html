@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <h3>OUR TEAM</h3>
+  <div class="jumbotron text-center">
+    <a routerLink="/users/create" class="btn btn-info">Create new user</a>
+  </div>
+  <div class="clr-row">
+    <div *ngFor="let user of users" class="clr-col-md-4">
+      <app-user-item [user]="user"></app-user-item>
+    </div>
+  </div>
+</div>

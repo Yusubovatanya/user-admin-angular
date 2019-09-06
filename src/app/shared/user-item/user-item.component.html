@@ -1,0 +1,19 @@
+<div class="card clickable">
+  <a [routerLink]="[ '/users', user.id ]">
+    <div class="card-img">
+      <img [src]="user.avatar" class="card-media-image">
+    </div>
+    <div class="card-block">
+      <h3 class="card_name">
+        {{user.first_name}} {{user.last_name}}
+      </h3>
+      <p>Job: {{user.job ? user.job : ""}} </p>
+      <p class="text_bold">
+        Email:{{user.email}}
+      </p>
+    </div>
+  </a>
+  <div class="card-footer">
+    <button class="btn btn-primary" [routerLink]="['/users', user.id, 'edit']">Edit</button>
+  </div>
+</div>

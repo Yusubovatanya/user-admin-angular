@@ -1,0 +1,18 @@
+.bold {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 2em
+}
+
+.navigation_card {
+  padding-top: 30px;
+}
+
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 26px;
+  background-color: #fff;
+}

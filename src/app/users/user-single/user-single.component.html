@@ -1,0 +1,32 @@
+<div class="wrapper" *ngIf="user">
+  <div class="clr-row">
+    <div class="clr-col-md-5">
+      <div class="card-img">
+        <img [src]="user?.avatar" class="card-media-image">
+      </div>
+    </div>
+    <div class="clr-col-md-7">
+      <div class="card-block">
+        <h2 class="bold">
+          {{user?.first_name}} {{user?.last_name}}
+        </h2>
+        <p class="bold"> Job: engineer</p>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quia at. Pariatur illo officia repudiandae
+          quia, totam fugit! Vero voluptatem consequatur veniam nemo! Reprehenderit quam iusto ab illum sit ad!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quia at. Pariatur illo officia repudiandae
+          quia, totam fugit! Vero voluptatem consequatur veniam nemo! Reprehenderit quam iusto ab illum sit ad!
+        </p>
+        <hr>
+        <p class="bold">
+          Email: {{user?.email}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="navigation_card">
+    <a class="btn btn-primary" [routerLink]="['/users', user.id, 'edit']">Edit</a>
+    <a (click)="deleteUser()" class="btn btn-danger">Delete</a>
+    <a (click)="nextUser()" class="btn btn-outline">Next</a>
+  </div>
+</div>

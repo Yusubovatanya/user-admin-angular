@@ -1,0 +1,67 @@
+<div class="clr-row">
+  <div class="card card_container clr-col-md-12">
+    <h3>Create new user</h3>
+    <form [formGroup]="userForm" (ngSubmit)="createUser()" class="clr-form">
+
+      <div class="clr-row img_avatar" *ngIf="photoUrl">
+        <div [ngStyle]="{
+              'background': 'url('+ photoUrl +')', 
+              'width': '300px',
+              'height': '300px',
+              'background-size': 'cover',
+              'background-position-x': 'center',
+              'background-position-y': 'top'
+            }">
+        </div>
+      </div>
+
+      <div>
+        <label for="photo" class="btn btn-primary">Photo</label>
+        <input class="upload_img" type="file" id="photo" (change)="uploadPhoto($event)" formControlName="photo">
+      </div>
+
+      <clr-input-container>
+        <label>Name</label>
+        <input clrInput type="text" id="name" placeholder="Name" formControlName="name" size="40">
+        <clr-control-error> {{formErrors.name}}</clr-control-error>
+      </clr-input-container>
+
+      <clr-input-container>
+        <label>Second name</label>
+        <input clrInput type="text" id="name" placeholder="Second name" formControlName="secondName" size="40">
+        <clr-control-error> {{formErrors.name}}</clr-control-error>
+      </clr-input-container>
+
+      <clr-input-container>
+        <label> Email</label>
+        <input clrInput type="text" id="login_username" placeholder="Email" formControlName="email" size="40">
+        <clr-control-error> {{formErrors.email}}</clr-control-error>
+      </clr-input-container>
+
+      <clr-input-container>
+        <label>Job</label>
+        <input clrInput type="text" id="job" placeholder="Job" formControlName="job" size="40">
+        <clr-control-error> {{formErrors.job}}</clr-control-error>
+      </clr-input-container>
+
+      <clr-input-container>
+        <label>Phone</label>
+        <input clrInput type="tel" id="phone" placeholder="Phone" formControlName="phone" size="40">
+        <clr-control-error>{{formErrors.phone}} </clr-control-error>
+      </clr-input-container>
+
+      <div class="data_field">
+        <label>Date of Birth</label>
+        <input type="date" id="data" size="35" clrDate formControlName="data">
+        <clr-control-error> {{formErrors.data}}</clr-control-error>
+      </div>
+
+      <div class="other_info">
+        <label for="other">Other information</label><br>
+        <textarea id="other" rows="3" formControlName="other"></textarea>
+      </div>
+
+      <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">Create user</button>
+    </form>
+  </div>
+</div>

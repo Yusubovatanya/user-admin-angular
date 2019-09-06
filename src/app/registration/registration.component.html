@@ -1,0 +1,30 @@
+<div class="login-wrapper">
+  <form class="login" (ngSubmit)="registration()" [formGroup]="userForm">
+    <section class="title">
+      <h3 class="welcome">Welcome to Our Registration System!</h3>
+    </section>
+    <div class="login-group">
+
+      <clr-input-container>
+        <label> </label>
+        <input clrInput type="text" id="login_username" placeholder="Name" formControlName="userName">
+        <clr-control-error> {{formErrors.userName}}</clr-control-error>
+      </clr-input-container>
+
+      <clr-input-container>
+        <label></label>
+        <input clrInput type="email" id="email" placeholder="E-mail" formControlName="userLogin">
+        <clr-control-error> {{formErrors.userLogin}}</clr-control-error>
+      </clr-input-container>
+
+      <clr-input-container>
+        <label> </label>
+        <input clrInput type="password" id="login_password" placeholder="Password" formControlName="userPassword">
+        <clr-control-error> {{formErrors.userPassword}}</clr-control-error>
+      </clr-input-container>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!userForm.valid">Registration</button>
+      <button class="btn btn-info btn_registration" (click)="goToLogin()">Login</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+.text_bold {
+  font-weight: 500;
+}
+
+.card_name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card_container {
+  padding: 26px 100px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+h3 {
+  text-align: center;
+  padding-bottom: 1.5em;
+  font-weight: 500;
+}
+
+.form_container {
+  margin: 0 auto;
+}
+
+.button_edit {
+  padding-top: 3em;
+}
+
+.img_avatar>div {
+  margin: 0 auto;
+}
